@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listes_des_series/estiamFlix</title>
+</head>
+<body>
+    <center>
+        <h1>WELCOLME ON THE PAGE OF LIST</h1>
+        <p>Mes differents listes sont :<p>
+            <ul>
+            {%for movie in movies%}
+            <li>
+            <a href="{% url 'serie-detail' movie.id %}">{{movie.titre|upper}}</a>
+            -<a href="{% url 'serie-modifie' movie.id %}">modifier</a>
+            -<a href="{% url 'serie-supprime' movie.id %}">supprime</a>
+            </li>
+            {% endfor %}
+            <br>
+        </ul>
+        <ul>
+        <!-- <ul>
+             <li>{{movies.1.titre}}</li>
+            <li>{{movies.1.description}}</li>
+            <li>{{movies.0.realisateur}}</li>
+            <li>{{movies.1.annee_de_sortie}}</li>
+            <li>{{movies.0.nombre_episode}}</li> 
+        </ul> -->
+    <a href="http://127.0.0.1:8000/acceuil/">acceuil</a> 
+</center>
+</body>
+</html>

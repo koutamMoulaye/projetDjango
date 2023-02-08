@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscription/estiamFlix</title>
+</head>
+<body>
+    <center>
+    <h1>inscription</h1>
+    <form method="post" action="">
+        {%csrf_token%}
+        {%for champ in form2%}
+        {{champ.label}}
+        {{champ}} <br>
+        {%endfor%}
+        {{form2.errors}}
+        Avez-vous déjà un compte ? <a href="{% url 'serie-acces' %}" class="ml-2">Se connecter</a><br>
+        {% csrf_token %}
+        <input type="submit" value="Register Account">
+    </form>
+    {%for message in messages%}
+    <p id="messages">{{message}}</p>
+    {%endfor%}
+    </center>
+</body>
+</html>   
